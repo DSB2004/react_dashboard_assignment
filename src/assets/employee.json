@@ -1,0 +1,92 @@
+[
+  {
+    "name": "John Doe",
+    "email": "john.doe@example.com",
+    "role": "Admin",
+    "status": "Active"
+  },
+  {
+    "name": "Jane Smith",
+    "email": "jane.smith@example.com",
+    "role": "User",
+    "status": "Active"
+  },
+  {
+    "name": "Sam Johnson",
+    "email": "sam.johnson@example.com",
+    "role": "Moderator",
+    "status": "Pending"
+  },
+  {
+    "name": "Alice Brown",
+    "email": "alice.brown@example.com",
+    "role": "User",
+    "status": "Active"
+  },
+  {
+    "name": "Mike Davis",
+    "email": "mike.davis@example.com",
+    "role": "User",
+    "status": "Inactive"
+  },
+  {
+    "name": "Emily Wilson",
+    "email": "emily.wilson@example.com",
+    "role": "Moderator",
+    "status": "Active"
+  },
+  {
+    "name": "Chris Lee",
+    "email": "chris.lee@example.com",
+    "role": "Admin",
+    "status": "Pending"
+  },
+  {
+    "name": "Anna White",
+    "email": "anna.white@example.com",
+    "role": "User",
+    "status": "Active"
+  },
+  {
+    "name": "David Martin",
+    "email": "david.martin@example.com",
+    "role": "User",
+    "status": "Inactive"
+  },
+  {
+    "name": "Sophia Garcia",
+    "email": "sophia.garcia@example.com",
+    "role": "Moderator",
+    "status": "Active"
+  },
+  {
+    "name": "James Miller",
+    "email": "james.miller@example.com",
+    "role": "Admin",
+    "status": "Active"
+  },
+  {
+    "name": "Ethan Walker",
+    "email": "ethan.walker@example.com",
+    "role": "Moderator",
+    "status": "Pending"
+  },
+  {
+    "name": "Mia Young",
+    "email": "mia.young@example.com",
+    "role": "User",
+    "status": "Active"
+  },
+  {
+    "name": "Noah King",
+    "email": "noah.king@example.com",
+    "role": "Admin",
+    "status": "Active"
+  },
+  {
+    "name": "Harper Scott",
+    "email": "harper.scott@example.com",
+    "role": "User",
+    "status": "Inactive"
+  }
+]
