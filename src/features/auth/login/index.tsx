@@ -7,10 +7,11 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { Link } from "react-router-dom";
-
+import loginHandler from "./handler";
+import { useNavigate } from "react-router-dom";
 export default function Login() {
   const { renderAlert } = useAlert();
-
+  const navigate = useNavigate();
   const {
     register,
     handleSubmit,
@@ -20,9 +21,15 @@ export default function Login() {
     resolver: zodResolver(loginSchema),
   });
 
-  const onSubmit = async (data: any) => {
-    await new Promise((resolve) => setTimeout(resolve, 1000)); //mimic login
-    reset();
+  const onSubmit = async (data: z.infer<typeof loginSchema>) => {
+    try {
+      await loginHandler(data);
+      renderAlert("SUCCESS", "Login Successful!!");
+      navigate("/");
+      reset();
+    } catch (err: any) {
+      renderAlert("ERROR", err.message);
+    }
   };
 
   return (

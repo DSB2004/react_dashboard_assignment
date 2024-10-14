@@ -14,7 +14,7 @@ const ToggleButton: FC<IPROPS> = ({ onClick, ...props }) => {
   return (
     <button
       onClick={handleClick}
-      className="relative w-16 h-7 border-2 border-black duration-300 dark:border-white border-opacity-25 rounded-md flex items-center"
+      className="w-16 h-7 border-2 border-black duration-300 dark:border-white border-opacity-25 rounded-md flex items-center"
       {...props}
     >
       <div

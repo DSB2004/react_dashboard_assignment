@@ -49,6 +49,9 @@ export default function ResetPassword() {
       <Button className="my-4 w-56" type="submit">
         {isSubmitting ? <LoadingIcon /> : <>Change Password</>}
       </Button>
+      <Button className="my-4 w-56" type="button">
+        <>Cancel Requst</>
+      </Button>
     </form>
   );
 }

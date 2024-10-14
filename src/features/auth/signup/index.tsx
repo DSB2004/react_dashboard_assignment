@@ -7,10 +7,11 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { Link } from "react-router-dom";
 import LoadingIcon from "../../../components/loadingIcon";
-
+import { useNavigate } from "react-router-dom";
+import signUpHandler from "./handler";
 export default function SignUp() {
   const { renderAlert } = useAlert();
-
+  const navigate = useNavigate();
   const {
     register,
     handleSubmit,
@@ -21,8 +22,14 @@ export default function SignUp() {
   });
 
   const onSubmit = async (data: any) => {
-    await new Promise((resolve) => setTimeout(resolve, 1000)); //mimic signup
-    reset();
+    try {
+      await signUpHandler(data);
+      renderAlert("SUCCESS", "SignUp Successful!!");
+      navigate("/");
+      reset();
+    } catch (err: any) {
+      renderAlert("ERROR", err.message);
+    }
   };
 
   return (

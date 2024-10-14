@@ -1,17 +1,19 @@
-import React from "react";
 import { useMenu } from "../../../context/useMenu";
-import { FaReact } from "react-icons/fa6";
-import { IoIosHome } from "react-icons/io";
-import { FaUserFriends } from "react-icons/fa";
-import { MdOutlineTaskAlt } from "react-icons/md";
-import { IoSettings } from "react-icons/io5";
-import { MdOutlineCampaign } from "react-icons/md";
-import { GrUserManager } from "react-icons/gr";
-import Dropdown from "../../../components/dropdown";
-import { IoMdOptions } from "react-icons/io";
-import { MdLogout } from "react-icons/md";
 import { useNavigate } from "react-router";
+
+import { firebaseAuth } from "../../../lib/firebase";
+import { signOut } from "firebase/auth";
+
+import { FaReact } from "react-icons/fa6";
+import { IoIosHome, IoMdOptions } from "react-icons/io";
+import { FaUserFriends } from "react-icons/fa";
+import { MdOutlineTaskAlt, MdOutlineCampaign, MdLogout } from "react-icons/md";
+import { IoSettings } from "react-icons/io5";
+import { GrUserManager } from "react-icons/gr";
+
+import Dropdown from "../../../components/dropdown";
 import Item from "../../../components/item";
+
 export default function Navbar() {
   const navigate = useNavigate();
   const { isOpen, toggleOpen } = useMenu();
@@ -113,7 +115,13 @@ export default function Navbar() {
             </Item>
           </div>
           <div className="absolute bottom-5 w-60">
-            <Item className="mt-auto">
+            <Item
+              className="mt-auto"
+              onClick={async () => {
+                await signOut(firebaseAuth);
+                sessionStorage.removeItem("alerted");
+              }}
+            >
               <MdLogout className="w-8 h-8 fill-red-500" />
               <span className="text-red-500 font-bold"> Logout</span>
             </Item>

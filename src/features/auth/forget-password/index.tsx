@@ -21,7 +21,8 @@ export default function ForgetPassword() {
   });
 
   const onSubmit = async (data: any) => {
-    await new Promise((resolve) => setTimeout(resolve, 1000)); //mimic login
+    await new Promise((resolve) => setTimeout(resolve, 1000)); //mimic async logic
+
     reset();
   };
 
@@ -50,6 +51,10 @@ export default function ForgetPassword() {
 
       <Link className="my-3 text-base  dark:text-white" to="/auth/login">
         Log In! Click here
+      </Link>
+
+      <Link className=" text-base  dark:text-white" to="/auth/reset-password">
+        Reset Password
       </Link>
     </form>
   );

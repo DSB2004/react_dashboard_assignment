@@ -3,6 +3,7 @@ import { IoIosMenu } from "react-icons/io";
 import { FaReact } from "react-icons/fa6";
 import { useMenu } from "../../../context/useMenu";
 import Input from "../../../components/input";
+import UserProfile from "../../../components/userProfile";
 export default function Header() {
   const { isOpen, toggleOpen } = useMenu();
 
@@ -15,11 +16,15 @@ export default function Header() {
             React Dashboard
           </h1>
         </div>
-
-        <IoIosMenu
-          className="w-10 h-10 hover:bg-gray-200 hover:dark:bg-neutral-600 dark:fill-white duration-300 rounded-md p-1"
-          onClick={() => toggleOpen(!isOpen)}
-        />
+        <div className="flex items-center gap-2">
+          <UserProfile />
+          <IoIosMenu
+            className={`w-10 h-10 hover:bg-gray-200 hover:dark:bg-neutral-600 dark:fill-white duration-300 rounded-md p-1 ${
+              isOpen ? "bg-gray-200 dark:bg-neutral-600" : ""
+            }`}
+            onClick={() => toggleOpen(!isOpen)}
+          />
+        </div>
       </header>
     </>
   );
